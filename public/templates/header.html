@@ -1,0 +1,36 @@
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">SyncroTV</a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+                <% if (user && user.username) { %>
+                <li><a href="#videos">Videos</a></li>
+                <li><a href="#sala">Sala</a></li>
+                <li><input style="margin-top: 8px;" id="remote-sala" type="text" class="form-control" name="remsala" value="" placeholder="A quina sala vols anar?"></li>
+                <li><button style="margin-top: 8px;" id="btn-remsala" type="button" class="btn btn-success">Go Sala</button></li>
+                <% } %>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <% if (user && user.username) { %>
+                <li><a href='#profile'><%= user.username %></a></li>
+                <% } %>
+            </ul>
+        </div>
+    </div>
+</nav>
+<script>
+    $(function() {
+        $('.nav a').on('click', function(){
+            if($('.navbar-toggle').css('display') !='none'){
+                $(".navbar-toggle").trigger( "click" );
+            }
+        });
+    });
+</script>

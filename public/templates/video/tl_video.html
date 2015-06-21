@@ -1,0 +1,22 @@
+<div id="home" class="page-header">
+    <h1>Llista de Videos</h1>
+</div>
+
+<div class="panel panel-primary">
+    <div class="panel-body">
+        <ul class="list-group">
+            <!--Afegir un li amb un mes per afegir video-->
+            <li class="list-group-item">
+                <span><a href="#afegir"><img src="simbolMes.jpg" alt="Afegir" width=196 height=""><div><h3>Afegir Video</h3></div></img></a></span>
+            </li>
+            <% videos.each(function(o) { %>
+            <li class="list-group-item">
+                <span class="list-video" data-id=<%=o.get('id')%>><a href="#videos"><img src=<%= o.get('img')%> alt=<%= o.get('name')%> ><div><h3><%= o.get('name')%></h3></div></img></a></span>
+            </li>
+            <% }); %>
+        </ul>
+    </div>
+    <div class="panel-footer">
+        <h6>Videos <span class="label label-info" style="background: #5CB75C"><%= videos.length %></span></h6>
+    </div>
+</div>

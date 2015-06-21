@@ -1,0 +1,24 @@
+<div id="home" class="page-header">
+    <h1 style="display: inline-flex" >Sala de&nbsp;<div id="nomSala"><%=sala.get('UsuariEmail')%></div></h1>
+</div>
+<div class="panel">
+    <div class="panel-body">
+        <div class="videoWrapper">
+            <iframe id="videoiframe"
+                 src=<%= sala.get('Video').url%>?enablejsapi=1 allowfullscreen>
+            </iframe>
+        </div>
+        <div class="navbar navbar-default">
+            <div class="container">
+                <div class="chatArea">
+                    <ul id="messages"></ul>
+                </div>
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-send"></i></span>
+                    <input id="txtMsg" type="text" class="form-control" name="input-text" placeholder="Envia un missatge...">
+                </div>
+                <button id="btn-sendMsg" style="margin-bottom: 5px" class="btn btn-success">Enviar  </button>
+            </div>
+        </div>
+    </div>
+</div>
